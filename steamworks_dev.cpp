@@ -50,6 +50,7 @@ private:
 public:
 	void FindLobbies()
 	{
+		SteamMatchmaking()->AddRequestLobbyListResultCountFilter(9999);
 		SteamMatchmaking()->AddRequestLobbyListDistanceFilter(k_ELobbyDistanceFilterWorldwide);
 		SteamMatchmaking()->AddRequestLobbyListStringFilter("version", FindStr.c_str(), k_ELobbyComparisonEqual);
 		SteamAPICall_t hSteamAPICall = SteamMatchmaking()->RequestLobbyList();
